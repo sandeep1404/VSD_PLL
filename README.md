@@ -297,6 +297,9 @@ All the sub-ciruits are integrated with in a single PLL module file by declaring
 
 ![pll_prelayout_terminal](https://user-images.githubusercontent.com/45798709/133931018-9b10313c-cd7a-4679-9d00-ff0ac8c489f8.png)
 
+![pll_prelayout_output 2](https://user-images.githubusercontent.com/45798709/133938964-dacd53de-041d-44ad-86d9-6949b602d28b.png)
+
+
 ### Troubleshooting steps:
 
 If output doesn't match or mimic properly, first is to observe what kinds of issues you are facing. Always try to debug individual circuits rather than simulating the whole circuit.
@@ -410,7 +413,13 @@ It will provide the user project area to add our design, and we need not bother 
 2. I would like to thank Ms. Lakshmi S, for guiding throughout the workshop about how to design PLL.
 
 
-
+# Refrences:
+ 
+ 1. analog cmos design behzad razavi
+ 2. VSD - Circuit Design & SPICE Simulations - Part 1(https://www.udemy.com/course/vlsi-academy-circuit-design)
+ 3. VSD - Circuit Design & SPICE Simulations - Part 2(https://www.udemy.com/course/vlsi-academy-circuit-design-part2)
+ 4. PLL design lectures by Prof S. Chatterjee
+ 5. Dennis Fischette's 1-Stop PLL Center(https://www.delroy.com/PLL_dir/pll.htm)
 
 
 
