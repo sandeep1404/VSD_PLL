@@ -245,7 +245,7 @@ The command for running charge pump is ngspice CP.cir
 
 ![cp_terminal](https://user-images.githubusercontent.com/45798709/133929179-3bf12cd3-6b81-438f-9b24-3d55894dea8c.png)
 
-CP terminal(Voltage an current) values:
+CP  node Voltage values:
 
 ![cp_pulse_terminal _valuespng](https://user-images.githubusercontent.com/45798709/133929224-9b27e817-a717-4248-9e26-b960d313b491.png)
 
@@ -264,10 +264,9 @@ The command forVCO is ngspice VCO.cir
 
 ![vco_terminal](https://user-images.githubusercontent.com/45798709/133929298-94b2307e-4116-401d-b0f1-59a4277795ed.png)
 
-VCO  terminal values :
+VCO node voltage values :
 
 ![vco_values](https://user-images.githubusercontent.com/45798709/133929319-a43a2893-8b92-4e48-9d69-ed88e8bc35de.png)
-
 
 
 
@@ -291,6 +290,31 @@ VCO  terminal values :
 
 ### Phase detector closeup output :
 ![PD_output _2png](https://user-images.githubusercontent.com/45798709/133929026-8819ac13-c562-47fb-b0b9-54781cf50a95.png)
+
+# Steps to combine PLL sub-circuits and PLL full design simulation:
+
+All the sub-ciruits are integrated with in a single PLL module file by declaring modules to each sub-cicuit and calling each individual module separately acoording to their functionality with in the PLL circuit spice file.
+
+![pll_prelayout_terminal](https://user-images.githubusercontent.com/45798709/133931018-9b10313c-cd7a-4679-9d00-ff0ac8c489f8.png)
+
+### Troubleshooting steps:
+
+If output doesn't match or mimic properly, first is to observe what kinds of issues you are facing. Always try to debug individual circuits rather than simulating the whole circuit.
+
+If signals are coming flat up or the simulation is crashing then check whether the connectivity is done properly or any issues like wrong net names, capitaliszation issues or parameter value issues. 
+
+If the signals are coming as expected but mimicing of signal is not happening then verify the following:
+
+1. VCO is working within the required range or not.
+
+2. Whether the PFD is able to detect small phase differences or not.
+
+3. How is the response of charge pump? Is it fast or slow. Too much fluctuations in charging or discharging, then capacitor sizing is the thing where we have to pay the attention to. Also, check if there is charge leakage. If the charge pump is charging when the input is zero, then there is charge leakage issue.
+
+4. If nothing works out, then try adjusting the loop filter by using the thumb rul
+
+
+
 
 
 
