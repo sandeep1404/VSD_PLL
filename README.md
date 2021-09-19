@@ -1,5 +1,5 @@
 # Phase-Locked-Loop (PLL) Design-using-SKY130nm-Technology
-2-Day Workshop on 18th September 2021 and 19th September 2021
+2-Day Workshop on 18th-19th September 2021
 
 ![coverpic](https://user-images.githubusercontent.com/45798709/133917253-d670da75-f738-49af-b574-6175c425841f.png)
 
@@ -43,7 +43,7 @@ Day 2 : PLL Labs and post-layout simulations
 The day 1 of the workshop covers about the basics of PLL, different blocks present in PLL and their functionalities and steps to install ngspice and magic for designing of PLL.
 The day 1 has the following content
 
-### Introduction to PLL:
+## Introduction to PLL:
 
 Why PLL?
 PLL is used to get a precise CLK aignal without frequency and phase noise and it has flexibilty to get a desirable clk_frequecy that we want to run. 
@@ -341,6 +341,77 @@ Let's see different layouts of PLL sub-circuits:
 ### Phase Frequency Detector:
 
 ![pfd_layout](https://user-images.githubusercontent.com/45798709/133934972-ceffb4f9-bb58-46a1-a90e-1605ff190f2b.png)
+
+# PLL Layout:
+
+![pll_layout](https://user-images.githubusercontent.com/45798709/133935142-18eb00fb-a2d7-4b0e-bd1b-c5ec8248b2a2.png)
+
+### PLL Layout (Closeup):
+
+![pll_layout 1png](https://user-images.githubusercontent.com/45798709/133935194-f655ebb4-f1ef-4bae-b14f-0c13c1bc05c3.png)
+
+# Parasitic Extraction:
+
+ Parasitic elements like resistors and capacitors are present in between the metal contacts in the layout due to this parasitic elements there is some delay(RC delay) can be added to the cirucit which may effect the circuit performance. So this parasitic capacitors need to be eliminated, So we need to perform post-layout simulation and compare it with pre-layout simulation since there is chance of addition of parasitic elements after the layout design and there might be chnage in some circuit parameters. So post-layout simulation is performed.
+ 
+For Parasitic ectraction we need to invoke certain commands from magic layout editor tool
+1. extract all 
+2. ext2spice cthresh 0 rthresh 0
+3. ext2spice
+
+This steps will convert the PFD.tech file into PFD.spice file where we can find all the parasitic capacitance present in the PFD layout design.
+
+![parasiticis  extractionpng](https://user-images.githubusercontent.com/45798709/133938249-84ee5460-0f40-4d4f-9ad9-b0eb34b3ad8b.png)
+
+ 
+![parasiticis](https://user-images.githubusercontent.com/45798709/133935288-b29fe991-3e2d-4e39-b1fd-d1c8c2788545.png)
+
+ # Post-Layout Simulation:
+ 
+ ## PFD Postlayot Simulation:
+ 
+![Post_layout_terminal](https://user-images.githubusercontent.com/45798709/133938295-0c9d3f0e-a69a-44cc-97b9-b1cc939713db.png)
+
+![Postlayout_out1](https://user-images.githubusercontent.com/45798709/133938296-48342dc8-17cc-4095-b43d-c54be7cf4c6c.png)
+
+## Frequency divider Postlayout simulated output:
+
+ ![Pll_Post_layout_outout 1png](https://user-images.githubusercontent.com/45798709/133938483-bec2cf3e-3826-4996-9585-91cf3e865abc.png)
+
+
+## PLL Postlayout Simulation
+ 
+![Pll_Post_layout_terminal](https://user-images.githubusercontent.com/45798709/133937797-0bbda0ac-15c9-4547-8a6a-a6b15cf563b5.png)
+
+![PLL_postlayout_node voltages](https://user-images.githubusercontent.com/45798709/133937799-4cc191ce-86c4-4555-aa0d-5efcc1ea3c2b.png)
+
+![Pll_Post_layout_output2](https://user-images.githubusercontent.com/45798709/133938401-c6f69ec2-fd7c-4d95-959e-42c040383561.png)
+
+![Pll_Post_layout_output3](https://user-images.githubusercontent.com/45798709/133938402-285a908a-4822-49fa-850c-00018cca07a7.png)
+
+
+ 
+
+
+
+
+## About Tapeout
+
+Tapeout means to send our design to the fab after we prepare it with all the additional support we require. 
+
+We should first connect our silicon wafer with the real world. For that we use I/O pads. Then for any kind of serial connectivity like I2C, UART and other peripherals, we should have their designs. Memory also has to be incorporated which takes a lot of space. Testing mechanisms should also be added. Taking care of all of this becomes complicated hence, we should choose a driver to enable our IP to meet the desired requirements to undergo fabrication process. For this we can use Efabless Caravel SoC template.
+
+It will provide the user project area to add our design, and we need not bother about other things on SOC.
+
+# Acknowledgement
+
+1. I would like to thank Mr. Kunal Ghosh, co-founder [VSD](https://www.vlsisystemdesign.com/), for providing me with this wonderful 2-day workshop.
+
+2. I would like to thank Ms. Lakshmi S, for guiding throughout the workshop about how to design PLL.
+
+
+
+
 
 
 
