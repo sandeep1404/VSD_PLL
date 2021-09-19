@@ -311,7 +311,40 @@ If the signals are coming as expected but mimicing of signal is not happening th
 
 3. How is the response of charge pump? Is it fast or slow. Too much fluctuations in charging or discharging, then capacitor sizing is the thing where we have to pay the attention to. Also, check if there is charge leakage. If the charge pump is charging when the input is zero, then there is charge leakage issue.
 
-4. If nothing works out, then try adjusting the loop filter by using the thumb rul
+4. If nothing works out, then try adjusting the loop filter by using the thumb rule.
+
+# Layout design and Layout Walktrough:
+
+ Layout of all the PLL sub-circuits can be done using Magic layout editor.
+ Magic layout editor is free and open source and the layout designed in magic are based on sky130nm Technology node. So we must include Sky130nm.Tech file into the magic directory which we want to run.
+ 
+ Why layouts are needed?
+ 
+In chip desiging every circuit is just like a block, its not just as we see in the textbooks or any letcure videos but in the real time the circuits will be integrated together forming like square or retangular boxes that can be easily placed with in a chip.
+
+Let's see different layouts of PLL sub-circuits:
+
+### VCO layout:
+
+![vco_layout](https://user-images.githubusercontent.com/45798709/133934885-90011c1a-6aa8-49fc-bf5e-6790f6e75f28.png)
+
+
+### charge Pump:
+
+![cp_layout](https://user-images.githubusercontent.com/45798709/133934896-0083f3e2-34f9-475c-803a-6f947ab18eed.png)
+
+
+### Frequency divider:
+
+![FD_magic](https://user-images.githubusercontent.com/45798709/133934931-bd6e4249-bc17-4640-9383-589a2c8732b6.png)
+
+### Phase Frequency Detector:
+
+![pfd_layout](https://user-images.githubusercontent.com/45798709/133934972-ceffb4f9-bb58-46a1-a90e-1605ff190f2b.png)
+
+
+
+  
 
 
 
