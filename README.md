@@ -75,17 +75,26 @@ When falling edge of feedback clock leads reference clock, the DN signal goes hi
 
 Dead zone is one of the problem of PFD. The phase difference below which PFD output is not able to reach the desired logical level and fails to turn on the charge pump switches is called the dead zone. Above precision PFDs are present, which overcomes this issues.
 
+
+
+
+![pFD](https://user-images.githubusercontent.com/45798709/134020476-c9b7e824-b019-4491-8fbc-cab1290cec26.jpg)
+
+
 ### Introduction to Charge Pump:
 
 The loop filer takes input as voltage/current. Hence, the pulse width modulates signal at the output of PFD have to be transformed to volateg/current. Therefore, we use charge pump circuit. 
 
-It generates the error current (ICP) which is proportional to the phase difference od pulse width between UP and DN which inturn is proportional to the input phase error. 
+It generates the error current (ICP) which is proportional to the phase difference od pulse width between UP and Down which inturn is proportional to the input phase error. 
 
-  Charge pump chagres or discharges the loop filter based upon the UP and DN signals. If UP signal is high, charge pump charges the loop filter. If DN signal is high, charge pump discharges the loop filter.
+  Charge pump chagres or discharges the loop filter based upon the UP and Down signals. If UP signal is high, charge pump charges the loop filter. If Down signal is high, charge pump discharges the loop filter.
   
   Charge pump circuit have of charge leakage, which should be reduced as much as possible.
+  
+  ![cp_ckt11](https://user-images.githubusercontent.com/45798709/134021636-00192330-c2d0-4538-8b78-000902d957a8.png)
 
-Loop Filter (LF):
+
+### Loop Filter (LF):
 
 It converts the error current into error voltage. It also controls the loop dynamics and stability of the system. 
 
