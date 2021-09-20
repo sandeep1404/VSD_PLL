@@ -421,11 +421,12 @@ It will provide the user project area to add our design, and we need not bother 
 
 # Refrences:
  
- 1. analog cmos design behzad razavi
+ 1. Analog CMOS design behzad razavi
  2. VSD - Circuit Design & SPICE Simulations - Part 1(https://www.udemy.com/course/vlsi-academy-circuit-design)
  3. VSD - Circuit Design & SPICE Simulations - Part 2(https://www.udemy.com/course/vlsi-academy-circuit-design-part2)
  4. PLL design lectures by Prof S. Chatterjee
- 5. Dennis Fischette's 1-Stop PLL Center(https://www.delroy.com/PLL_dir/pll.htm)
+ 5. VSD-Custom Layout(https://www.udemy.com/course/vlsi-academy-custom-layout/)
+ 6. Dennis Fischette's 1-Stop PLL Center(https://www.delroy.com/PLL_dir/pll.htm)
 
 
 
