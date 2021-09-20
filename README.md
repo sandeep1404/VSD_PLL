@@ -116,6 +116,9 @@ A toggle flip flop generates the clock which has twice the time period of the in
 
 A d- filipflop connected with inverter as a feedback between input and output of d-flip flop can act as frequency divider.
 
+![fd_ckt 1png](https://user-images.githubusercontent.com/45798709/134033485-8954ad94-ce15-432e-b326-e3797c7dac3a.png)
+
+
 
 ### Important terms used in PLL
 
