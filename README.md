@@ -105,6 +105,9 @@ It divides the VCO clock to generate the feedback clock with same frequency as i
 
 A toggle flip flop generates the clock which has twice the time period of the input clock given to it, that is we obtain the clock having half the frequency of the input clock provided to the frequency divider. For 8x clock multiplier, we should divide the output clock by 8 to generate feedback clock. For obtaining one-eigth of frequency, we should cascade three toggle flip flops. 
 
+A d- filipflop connected with inverter as a feedback between input and output of d-flip flop can act as frequency divider.
+
+
 ### Important terms used in PLL
 
 1. Lock-in range
@@ -200,13 +203,14 @@ After creating the .cir files we run the Ngspice simulation.
 There are different blocks that are need to be simulated with in the PLL first we need to design the blocks of PLL and write spice code for that and then simulate the blocks using ngspice
 
 ### Phase Frequency Detector circuit(PFD) 
-![pfd_ckt](https://user-images.githubusercontent.com/45798709/133927950-9099f15f-1323-4964-832e-28367853a883.png)
+
+![pfd_ckt 1png](https://user-images.githubusercontent.com/45798709/134018348-7362d6f6-eef2-46ad-9b3e-6ff6e90cee77.png)
 
 The phase frequency detector is designed using nmos and pmos for comparing the vco output signal frequency and phase with the reference clk frequency in order to observe the deviation of vco output with the refernece signal, so that if deviation is high we can reduce that by proper frequency multipilying operations that is why this PLL is also called as clk multiplier PLL.
 The connections among  the mosfets are written and described in the spice code of PFD and then we will simulate the file PFD.cir
 
 ### charge pump
-![cp_ckt](https://user-images.githubusercontent.com/45798709/133928175-369fb15a-c94e-4f5c-8048-96b2b293620d.png)
+![cp_ckt1](https://user-images.githubusercontent.com/45798709/134018338-1ea26b0c-14f4-4e24-b050-f20c1aa3c2ea.png)
 
 
 
@@ -214,13 +218,15 @@ Charge pump converts the digital comparision of vref and output of frequency det
 
 ### Voltage controlled oscilloscope:
 
-![vco_ckt](https://user-images.githubusercontent.com/45798709/133928319-5ca7acf0-afdb-4a54-9978-3021c24cf3d9.png)
+
+![vco_ckt 1png](https://user-images.githubusercontent.com/45798709/134018350-39693558-ab3c-487c-85a2-22c6c86ae277.png)
+
 
 
 ### Frequency divider:
 
 
-![fd_ckt](https://user-images.githubusercontent.com/45798709/133928369-f5e60f36-d5dd-485a-96a9-43b629ff2364.png)
+![fd_1](https://user-images.githubusercontent.com/45798709/134018344-66a6dc7d-0699-429b-b536-ebe64ff12d26.png)
 
 
 
